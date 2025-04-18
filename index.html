@@ -3,96 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piedmont Healthcare Cybersecurity Threats</title>
+  <title>Piedmont Healthcare Cybersecurity Report</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-blue-900 text-white py-10 text-center shadow-md">
-    <h1 class="text-4xl font-bold mb-2">Piedmont Healthcare Cybersecurity Threat Landscape</h1>
-    <p class="text-lg">Protecting critical infrastructure and patient data in Georgia's healthcare system</p>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="bg-blue-800 py-10 text-center shadow-md">
+    <h1 class="text-4xl font-bold mb-2">Piedmont Healthcare: Cybersecurity Threat Landscape</h1>
+    <p class="text-lg text-blue-200">Assessing Threats, Attack Vectors, Defenses & Business Impact</p>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-10 space-y-16">
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
     <section>
-      <h2 class="text-3xl font-semibold mb-4">About Piedmont Healthcare</h2>
-      <p class="text-lg leading-relaxed">Piedmont Healthcare is a leading nonprofit system in Georgia, operating hospitals and clinics serving millions. Its size and responsibility make it a prime cyber target.</p>
+      <h2 class="text-3xl font-semibold mb-4 text-blue-300"><i class="fas fa-hospital mr-2"></i> Overview of Piedmont Healthcare</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        Piedmont Healthcare is a nonprofit medical system based in Georgia with over 20 hospitals and hundreds of care locations.
+        Serving millions, it is a prime target for cybercriminals due to its volume of sensitive patient data and critical systems.
+      </p>
     </section>
 
     <section>
-      <h2 class="text-3xl font-semibold mb-4">Top Threats</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg">
-        <li>Ransomware attacks (Conti, LockBit, etc.)</li>
-        <li>Phishing emails and credential harvesting</li>
-        <li>Medical IoT exploitation (unpatched devices)</li>
-        <li>Data breaches targeting PHI/PII</li>
+      <h2 class="text-3xl font-semibold mb-4 text-red-400"><i class="fas fa-exclamation-triangle mr-2"></i> Primary Cyber Threats</h2>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+        <li>Ransomware attacks by groups like LockBit, Ryuk, and Conti</li>
+        <li>Phishing and social engineering attacks on staff</li>
+        <li>Data breaches exposing PHI and PII</li>
+        <li>IoT vulnerabilities in medical equipment and monitoring devices</li>
       </ul>
     </section>
 
     <section>
-      <h2 class="text-3xl font-semibold mb-4">Real Incidents</h2>
-      <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-4">
-        <p><strong>UHS Ransomware Incident (2020):</strong> Disrupted care at 400+ facilities, revealing system-wide vulnerabilities.</p>
+      <h2 class="text-3xl font-semibold mb-4 text-yellow-300"><i class="fas fa-bug mr-2"></i> Notable Incidents & Real-World Breaches</h2>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <p class="mb-3 text-gray-200"><strong>Universal Health Services (UHS), 2020:</strong> A major ransomware attack forced UHS to shut down systems across 400+ facilities.</p>
+        <p class="text-gray-200"><strong>Georgia Regional Hospitals (2021–2023):</strong> Several regional facilities, including Piedmont-affiliated centers, suffered ransomware attacks, phishing breaches, and EHR shutdowns.</p>
       </div>
-      <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4">
-        <p><strong>Local Breaches (2021–2023):</strong> Georgia hospitals faced phishing and malware attacks, forcing patient rerouting.</p>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-purple-300"><i class="fas fa-user-secret mr-2"></i> Threat Actors & Motivations</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        Threat groups such as Conti and LockBit operate globally, often from Eastern Europe, focusing on healthcare because:
+      </p>
+      <ul class="list-disc pl-6 mt-2 space-y-2 text-lg text-gray-300">
+        <li>Hospitals are more likely to pay quickly</li>
+        <li>Nation-state actors may target PHI for espionage or sabotage</li>
+        <li>Weak security and outdated devices make systems vulnerable</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-pink-300"><i class="fas fa-network-wired mr-2"></i> Common Attack Vectors</h2>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+        <li>Email phishing campaigns (staff compromise)</li>
+        <li>Exposed RDP/remote access ports</li>
+        <li>Exploited vulnerabilities in PACS/EHR software</li>
+        <li>Use of stolen credentials from the dark web</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-green-300"><i class="fas fa-shield-alt mr-2"></i> Defensive Technologies & Best Practices</h2>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+        <li>Endpoint Detection and Response (EDR) systems like SentinelOne</li>
+        <li>Multi-Factor Authentication (MFA) for all remote access</li>
+        <li>Network segmentation and micro-perimeters</li>
+        <li>Zero Trust Architecture and behavioral monitoring</li>
+        <li>Regular backups (offline/air-gapped)</li>
+        <li>Ongoing staff training and phishing simulations</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-indigo-300"><i class="fas fa-clipboard-check mr-2"></i> Compliance Requirements</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        Healthcare organizations like Piedmont are governed by strict regulations:
+      </p>
+      <ul class="list-disc pl-6 mt-2 space-y-2 text-lg text-gray-300">
+        <li><strong>HIPAA:</strong> Ensures protection of patient health data</li>
+        <li><strong>HITECH Act:</strong> Promotes secure electronic health record systems</li>
+        <li><strong>NIST Cybersecurity Framework:</strong> Used to align risk management strategies</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-orange-300"><i class="fas fa-briefcase mr-2"></i> Business Implications</h2>
+      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+        <li>Millions lost in downtime and ransom recovery</li>
+        <li>HIPAA violations may result in federal fines</li>
+        <li>Loss of public trust and patient safety concerns</li>
+        <li>Costs of litigation, recovery, and third-party audits</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-4 text-cyan-300"><i class="fas fa-link mr-2"></i> Link to Simulation</h2>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+        <p class="text-lg text-gray-200">Access the interactive ransomware attack demo simulation here:</p>
+        <a href="#" class="text-blue-400 underline hover:text-blue-300">[Insert Link to External Demo Website]</a>
       </div>
     </section>
 
     <section>
-      <h2 class="text-3xl font-semibold mb-4">Threat Actors & Their Motives</h2>
-      <p class="text-lg">Ransomware gangs like LockBit and Conti, mostly from Eastern Europe, target healthcare for fast payouts. Nation-state actors may target PHI for espionage or leverage during crises.</p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Attack Vectors</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg">
-        <li>Phishing (email entry point)</li>
-        <li>Exposed RDP ports</li>
-        <li>Stolen credentials from the dark web</li>
-        <li>Unpatched PACS or EHR systems</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Defensive Technologies</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg">
-        <li>Endpoint Detection & Response (EDR) like SentinelOne</li>
-        <li>Zero Trust architecture and MFA</li>
-        <li>SIEM tools and 24/7 SOC monitoring</li>
-        <li>Encrypted, offline backups</li>
-        <li>Incident Response Plans (IRP)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Regulatory Requirements</h2>
-      <p class="text-lg leading-relaxed">Piedmont must comply with <strong>HIPAA</strong>, <strong>NIST Cybersecurity Framework</strong>, and <strong>HITECH Act</strong> regulations. These ensure secure handling of electronic health records and breach notification protocols.</p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Business Impact</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg">
-        <li>Downtime affecting emergency services</li>
-        <li>Fines and legal repercussions</li>
-        <li>Damage to brand reputation</li>
-        <li>Cost of recovery often exceeds ransom</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Video Demonstration</h2>
-      <div class="w-full h-64 bg-gray-300 flex items-center justify-center text-gray-600 italic">[Insert video or visual demo here]</div>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4">Conclusion</h2>
-      <p class="text-lg leading-relaxed">Piedmont and healthcare organizations alike must continually evolve cybersecurity practices to combat sophisticated threats. Staff awareness, modern tools, and response readiness are critical to resilience.</p>
+      <h2 class="text-3xl font-semibold mb-4 text-teal-300"><i class="fas fa-lightbulb mr-2"></i> Conclusion</h2>
+      <p class="text-lg leading-relaxed text-gray-300">
+        Piedmont Healthcare and similar institutions face daily threats to their operations and patient safety. Proactive cybersecurity, regulatory compliance, and strategic planning are essential to defend against increasingly advanced attackers.
+      </p>
     </section>
   </main>
 
-  <footer class="bg-blue-900 text-white text-center py-6 mt-10">
-    <p class="text-sm">&copy; 2025 Piedmont Healthcare Cybersecurity Presentation</p>
+  <footer class="bg-blue-800 text-white text-center py-6">
+    <p class="text-sm">&copy; 2025 Piedmont Cybersecurity Presentation | Created for Educational Use</p>
   </footer>
 </body>
 </html>
