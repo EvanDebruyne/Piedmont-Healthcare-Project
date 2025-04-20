@@ -4,120 +4,294 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Piedmont Healthcare Cybersecurity Report</title>
- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    }
+    .section-image {
+      transition: transform 0.3s ease;
+    }
+    .section-image:hover {
+      transform: scale(1.03);
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: #3b82f6;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -0.375rem;
+      top: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+    .floating-btn {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
-  <header class="bg-blue-800 py-10 text-center shadow-md">
-    <h1 class="text-4xl font-bold mb-2">Piedmont Healthcare: Cybersecurity Threat Landscape</h1>
-    <p class="text-lg text-blue-200">Assessing Threats, Attack Vectors, Defenses & Business Impact</p>
+  <header class="hero-gradient py-16 text-center shadow-md relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Piedmont Healthcare: Cybersecurity Threat Landscape</h1>
+      <p class="text-xl text-blue-200 mb-8">Assessing Threats, Attack Vectors, Defenses & Business Impact</p>
+      <div class="flex justify-center">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hospital network security" class="rounded-lg shadow-xl w-full max-w-2xl h-64 object-cover">
+      </div>
+    </div>
   </header>
 
   <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-blue-300"><i class="fas fa-hospital mr-2"></i> Overview of Piedmont Healthcare</h2>
-      <p class="text-lg leading-relaxed text-gray-300">
-        Piedmont Healthcare is a nonprofit medical system based in Georgia with over 20 hospitals and hundreds of care locations.
-        Serving millions, it is a prime target for cybercriminals due to its volume of sensitive patient data and critical systems.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-red-400"><i class="fas fa-exclamation-triangle mr-2"></i> Primary Cyber Threats</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
-        <li>Ransomware attacks by groups like LockBit, Ryuk, and Conti</li>
-        <li>Phishing and social engineering attacks on staff</li>
-        <li>Data breaches exposing PHI and PII</li>
-        <li>IoT vulnerabilities in medical equipment and monitoring devices</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-yellow-300"><i class="fas fa-bug mr-2"></i> Notable Incidents & Real-World Breaches</h2>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <p class="mb-3 text-gray-200"><strong>Universal Health Services (UHS), 2020:</strong> A major ransomware attack forced UHS to shut down systems across 400+ facilities.</p>
-        <p class="text-gray-200"><strong>Georgia Regional Hospitals (2021–2023):</strong> Several regional facilities, including Piedmont-affiliated centers, suffered ransomware attacks, phishing breaches, and EHR shutdowns.</p>
+    <section class="bg-gray-800 rounded-xl p-8 shadow-lg">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-semibold mb-4 text-blue-300"><i class="fas fa-hospital mr-2"></i> Overview of Piedmont Healthcare</h2>
+          <p class="text-lg leading-relaxed text-gray-300">
+            Piedmont Healthcare is a nonprofit medical system based in Georgia with over 20 hospitals and hundreds of care locations.
+            Serving millions, it is a prime target for cybercriminals due to its volume of sensitive patient data and critical systems.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hospital network" class="rounded-lg shadow-md w-full h-64 object-cover section-image">
+        </div>
       </div>
     </section>
 
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-purple-300"><i class="fas fa-user-secret mr-2"></i> Threat Actors & Motivations</h2>
-      <p class="text-lg leading-relaxed text-gray-300">
-        Threat groups such as Conti and LockBit operate globally, often from Eastern Europe, focusing on healthcare because:
-      </p>
-      <ul class="list-disc pl-6 mt-2 space-y-2 text-lg text-gray-300">
-        <li>Hospitals are more likely to pay quickly</li>
-        <li>Nation-state actors may target PHI for espionage or sabotage</li>
-        <li>Weak security and outdated devices make systems vulnerable</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-pink-300"><i class="fas fa-network-wired mr-2"></i> Common Attack Vectors</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
-        <li>Email phishing campaigns (staff compromise)</li>
-        <li>Exposed RDP/remote access ports</li>
-        <li>Exploited vulnerabilities in PACS/EHR software</li>
-        <li>Use of stolen credentials from the dark web</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-green-300"><i class="fas fa-shield-alt mr-2"></i> Defensive Technologies & Best Practices</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
-        <li>Endpoint Detection and Response (EDR) systems like SentinelOne</li>
-        <li>Multi-Factor Authentication (MFA) for all remote access</li>
-        <li>Network segmentation and micro-perimeters</li>
-        <li>Zero Trust Architecture and behavioral monitoring</li>
-        <li>Regular backups (offline/air-gapped)</li>
-        <li>Ongoing staff training and phishing simulations</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-indigo-300"><i class="fas fa-clipboard-check mr-2"></i> Compliance Requirements</h2>
-      <p class="text-lg leading-relaxed text-gray-300">
-        Healthcare organizations like Piedmont are governed by strict regulations:
-      </p>
-      <ul class="list-disc pl-6 mt-2 space-y-2 text-lg text-gray-300">
-        <li><strong>HIPAA:</strong> Ensures protection of patient health data</li>
-        <li><strong>HITECH Act:</strong> Promotes secure electronic health record systems</li>
-        <li><strong>NIST Cybersecurity Framework:</strong> Used to align risk management strategies</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-orange-300"><i class="fas fa-briefcase mr-2"></i> Business Implications</h2>
-      <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
-        <li>Millions lost in downtime and ransom recovery</li>
-        <li>HIPAA violations may result in federal fines</li>
-        <li>Loss of public trust and patient safety concerns</li>
-        <li>Costs of litigation, recovery, and third-party audits</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-3xl font-semibold mb-4 text-cyan-300"><i class="fas fa-link mr-2"></i> Link to Simulation</h2>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <p class="text-lg text-gray-200">Access the interactive ransomware attack demo simulation here:</p>
-        <a href="https://evandebruyne.github.io/Ransomware-Test/" class="text-blue-400 underline hover:text-blue-300" target="_blank" rel="noopener noreferrer">
-  demo
-</a>
-
+      <h2 class="text-3xl font-semibold mb-6 text-red-400"><i class="fas fa-exclamation-triangle mr-2"></i> Primary Cyber Threats</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ransomware attack" class="rounded-lg mb-4 w-full h-48 object-cover section-image">
+          <h3 class="text-xl font-semibold text-red-300 mb-2">Ransomware Attacks</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-300">
+            <li>Groups like LockBit, Ryuk, and Conti</li>
+            <li>Encrypt critical systems and demand payment</li>
+            <li>Can shut down entire hospital operations</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Phishing attack" class="rounded-lg mb-4 w-full h-48 object-cover section-image">
+          <h3 class="text-xl font-semibold text-red-300 mb-2">Phishing & Social Engineering</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-300">
+            <li>Targeted emails to staff members</li>
+            <li>Fake login pages to steal credentials</li>
+            <li>BEC (Business Email Compromise) scams</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2 class="text-3xl font-semibold mb-4 text-teal-300"><i class="fas fa-lightbulb mr-2"></i> Conclusion</h2>
-      <p class="text-lg leading-relaxed text-gray-300">
-        Piedmont Healthcare and similar institutions face daily threats to their operations and patient safety. Proactive cybersecurity, regulatory compliance, and strategic planning are essential to defend against increasingly advanced attackers.
-      </p>
+      <h2 class="text-3xl font-semibold mb-6 text-yellow-300"><i class="fas fa-bug mr-2"></i> Notable Incidents & Real-World Breaches</h2>
+      <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="text-xl font-semibold text-yellow-200 mb-2">Universal Health Services (UHS), 2020</h3>
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Hospital systems down" class="rounded-lg mb-3 w-full h-40 object-cover section-image">
+            <p class="text-gray-200">A major ransomware attack forced UHS to shut down systems across 400+ facilities, costing millions in recovery and lost revenue.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h3 class="text-xl font-semibold text-yellow-200 mb-2">Georgia Regional Hospitals (2021–2023)</h3>
+            <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hospital emergency" class="rounded-lg mb-3 w-full h-40 object-cover section-image">
+            <p class="text-gray-200">Several regional facilities, including Piedmont-affiliated centers, suffered ransomware attacks, phishing breaches, and EHR shutdowns affecting patient care.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 rounded-xl p-8 shadow-lg">
+      <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2 order-2 md:order-1">
+          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1465&q=80" alt="Hacker in dark room" class="rounded-lg shadow-md w-full h-64 object-cover section-image">
+        </div>
+        <div class="md:w-1/2 order-1 md:order-2">
+          <h2 class="text-3xl font-semibold mb-4 text-purple-300"><i class="fas fa-user-secret mr-2"></i> Threat Actors & Motivations</h2>
+          <p class="text-lg leading-relaxed text-gray-300 mb-4">
+            Threat groups such as Conti and LockBit operate globally, often from Eastern Europe, focusing on healthcare because:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+            <li>Hospitals are more likely to pay quickly to restore operations</li>
+            <li>Nation-state actors may target PHI for espionage or sabotage</li>
+            <li>Weak security and outdated devices make systems vulnerable</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-pink-300"><i class="fas fa-network-wired mr-2"></i> Common Attack Vectors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+          <div class="text-pink-400 text-4xl mb-4">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-pink-200 mb-2">Email Phishing</h3>
+          <p class="text-gray-300">Targeted emails with malicious links or attachments</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+          <div class="text-pink-400 text-4xl mb-4">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-pink-200 mb-2">Exposed RDP</h3>
+          <p class="text-gray-300">Unsecured remote desktop protocol access</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+          <div class="text-pink-400 text-4xl mb-4">
+            <i class="fas fa-bug"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-pink-200 mb-2">Software Vulnerabilities</h3>
+          <p class="text-gray-300">Unpatched EHR/PACS system exploits</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+          <div class="text-pink-400 text-4xl mb-4">
+            <i class="fas fa-key"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-pink-200 mb-2">Stolen Credentials</h3>
+          <p class="text-gray-300">Compromised login details from dark web</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 rounded-xl p-8 shadow-lg">
+      <h2 class="text-3xl font-semibold mb-6 text-green-300"><i class="fas fa-shield-alt mr-2"></i> Defensive Technologies & Best Practices</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity dashboard" class="rounded-lg shadow-md w-full h-64 object-cover mb-6 section-image">
+          <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
+            <li>Endpoint Detection and Response (EDR) systems like SentinelOne</li>
+            <li>Multi-Factor Authentication (MFA) for all remote access</li>
+            <li>Network segmentation and micro-perimeters</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security training" class="rounded-lg shadow-md w-full h-64 object-cover mb-6 section-image">
+          <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
+            <li>Zero Trust Architecture and behavioral monitoring</li>
+            <li>Regular backups (offline/air-gapped)</li>
+            <li>Ongoing staff training and phishing simulations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-indigo-300"><i class="fas fa-clipboard-check mr-2"></i> Compliance Requirements</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div class="bg-indigo-900/30 p-4 rounded-lg mb-4">
+            <i class="fas fa-file-medical text-4xl text-indigo-300"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-indigo-200 mb-2">HIPAA</h3>
+          <p class="text-gray-300">Ensures protection of patient health data with strict privacy and security rules.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div class="bg-indigo-900/30 p-4 rounded-lg mb-4">
+            <i class="fas fa-laptop-medical text-4xl text-indigo-300"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-indigo-200 mb-2">HITECH Act</h3>
+          <p class="text-gray-300">Promotes secure electronic health record systems with breach notification requirements.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <div class="bg-indigo-900/30 p-4 rounded-lg mb-4">
+            <i class="fas fa-shield-virus text-4xl text-indigo-300"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-indigo-200 mb-2">NIST Framework</h3>
+          <p class="text-gray-300">Provides cybersecurity best practices for risk management strategies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 rounded-xl p-8 shadow-lg">
+      <h2 class="text-3xl font-semibold mb-6 text-orange-300"><i class="fas fa-briefcase mr-2"></i> Business Implications</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Financial loss" class="rounded-lg shadow-md w-full h-48 object-cover mb-4 section-image">
+          <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+            <li>Millions lost in downtime and ransom recovery</li>
+            <li>HIPAA violations may result in federal fines up to $1.5M per violation</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hospital reputation" class="rounded-lg shadow-md w-full h-48 object-cover mb-4 section-image">
+          <ul class="list-disc pl-6 space-y-2 text-lg text-gray-300">
+            <li>Loss of public trust and patient safety concerns</li>
+            <li>Costs of litigation, recovery, and third-party audits</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative">
+      <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center relative z-10">
+        <h2 class="text-3xl font-semibold mb-4 text-cyan-300"><i class="fas fa-link mr-2"></i> Interactive Ransomware Simulation</h2>
+        <p class="text-lg text-gray-200 mb-6">Experience how a ransomware attack unfolds in real-time:</p>
+        <a href="https://evandebruyne.github.io/Ransomware-Test/" class="inline-block bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-6 rounded-lg transition-all floating-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-play mr-2"></i> Launch Simulation
+        </a>
+      </div>
+      <div class="absolute inset-0 opacity-20 z-0">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center rounded-lg"></div>
+      </div>
+    </section>
+
+    <section class="bg-gray-800 rounded-xl p-8 shadow-lg text-center">
+      <h2 class="text-3xl font-semibold mb-6 text-teal-300"><i class="fas fa-lightbulb mr-2"></i> Conclusion</h2>
+      <div class="max-w-3xl mx-auto">
+        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Hospital security" class="rounded-lg shadow-md w-full h-64 object-cover mb-6 mx-auto section-image">
+        <p class="text-lg leading-relaxed text-gray-300">
+          Piedmont Healthcare and similar institutions face daily threats to their operations and patient safety. Proactive cybersecurity, regulatory compliance, and strategic planning are essential to defend against increasingly advanced attackers. Investment in security infrastructure and staff training is not just an IT expense—it's a critical component of patient care and organizational resilience.
+        </p>
+      </div>
     </section>
   </main>
 
-  <footer class="bg-blue-800 text-white text-center py-6">
-    <p class="text-sm">&copy; 2025 Piedmont Cybersecurity Presentation | Created for Educational Use</p>
+  <footer class="bg-blue-800 text-white py-8">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold mb-2">Piedmont Healthcare Cybersecurity</h3>
+          <p class="text-blue-200">Protecting Patient Data & Critical Systems</p>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-blue-200 transition-colors">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" class="text-white hover:text-blue-200 transition-colors">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+          <a href="#" class="text-white hover:text-blue-200 transition-colors">
+            <i class="fas fa-envelope text-2xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-blue-700 mt-6 pt-6 text-center text-sm text-blue-200">
+        <p>&copy; 2025 Piedmont Cybersecurity Presentation | Created for Educational Use</p>
+        <p class="mt-2">Images from Unsplash | Icons from Font Awesome</p>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
