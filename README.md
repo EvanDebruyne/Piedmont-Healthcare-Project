@@ -26,12 +26,10 @@ This project is a visual and interactive webpage analyzing cybersecurity threats
 ## 📁 Structure
 index.html // Main website file images/ // Folder containing locally uploaded images README.md // This file
 
-## 🌐 Live Demo
-[Click here to view the live site](https://yourusername.github.io/your-repo-name/)
+
 
 ## 📸 Credits
 - Images from [Unsplash](https://unsplash.com/)
 - Icons from [Font Awesome](https://fontawesome.com/)
 
-## 📌 Note
-This website is for educational use only and does not represent official content from Piedmont Healthcare.
+
