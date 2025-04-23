@@ -37,5 +37,6 @@ index.html // Main website file images/ // Folder containing locally uploaded im
 - https://news.sophos.com/en-us/2024/07/30/the-state-of-ransomware-in-healthcare-2024/
 - https://www.hipaajournal.com/healthcare-ransomware-attacks-2024/
 - https://www.bleepingcomputer.com/news/security/uhs-hospitals-hit-by-reported-country-wide-ryuk-ransomware-attack/
+- https://www.bleepingcomputer.com/news/security/emotet-spam-trojan-surges-back-to-life-after-5-months-of-silence/
 
 
